@@ -1,0 +1,156 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "xmake: Build Windows x64 (Debug)",
+            "type": "shell",
+            "command": "xmake",
+            "args": [
+                "config",
+                "-p",
+                "windows",
+                "-a",
+                "x64",
+                "-m",
+                "debug",
+                "-y",
+                "&&",
+                "xmake",
+                "build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "detail": "Build OmegaLocalization and the tests for Windows x64 in debug mode"
+        },
+        {
+            "label": "Run Tests Windows x64 (Debug)",
+            "type": "shell",
+            "command": "${workspaceFolder}/Build/Debug/x64/OmegaLocalization-Tests.exe",
+            "dependsOn": "xmake: Build Windows x64 (Debug)",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "Build then run the tests (x64, debug)"
+        },
+        {
+            "label": "xmake: Build Windows x64 (Release)",
+            "type": "shell",
+            "command": "xmake",
+            "args": [
+                "config",
+                "-p",
+                "windows",
+                "-a",
+                "x64",
+                "-m",
+                "release",
+                "-y",
+                "&&",
+                "xmake",
+                "build"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "detail": "Build OmegaLocalization and the tests for Windows x64 in release mode"
+        },
+        {
+            "label": "Run Tests Windows x64 (Release)",
+            "type": "shell",
+            "command": "${workspaceFolder}/Build/Release/x64/OmegaLocalization-Tests.exe",
+            "dependsOn": "xmake: Build Windows x64 (Release)",
+            "problemMatcher": [],
+            "group": "test",
+            "detail": "Build then run the tests (x64, release)"
+        },
+        {
+            "label": "xmake: Build Windows x86 (Debug)",
+            "type": "shell",
+            "command": "xmake",
+            "args": [
+                "config",
+                "-p",
+                "windows",
+                "-a",
+                "x86",
+                "-m",
+                "debug",
+                "-y",
+                "&&",
+                "xmake",
+                "build"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "detail": "Build OmegaLocalization and the tests for Windows x86 in debug mode"
+        },
+        {
+            "label": "Run Tests Windows x86 (Debug)",
+            "type": "shell",
+            "command": "${workspaceFolder}/Build/Debug/x86/OmegaLocalization-Tests.exe",
+            "dependsOn": "xmake: Build Windows x86 (Debug)",
+            "problemMatcher": [],
+            "group": "test",
+            "detail": "Build then run the tests (x86, debug)"
+        },
+        {
+            "label": "xmake: Build Windows x86 (Release)",
+            "type": "shell",
+            "command": "xmake",
+            "args": [
+                "config",
+                "-p",
+                "windows",
+                "-a",
+                "x86",
+                "-m",
+                "release",
+                "-y",
+                "&&",
+                "xmake",
+                "build"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "detail": "Build OmegaLocalization and the tests for Windows x86 in release mode"
+        },
+        {
+            "label": "Run Tests Windows x86 (Release)",
+            "type": "shell",
+            "command": "${workspaceFolder}/Build/Release/x86/OmegaLocalization-Tests.exe",
+            "dependsOn": "xmake: Build Windows x86 (Release)",
+            "problemMatcher": [],
+            "group": "test",
+            "detail": "Build then run the tests (x86, release)"
+        },
+        {
+            "label": "xmake: Clean",
+            "type": "shell",
+            "command": "xmake",
+            "args": [
+                "clean"
+            ],
+            "problemMatcher": [],
+            "detail": "Clean build artifacts"
+        },
+        {
+            "label": "Update Compile Commands",
+            "type": "shell",
+            "command": "${workspaceFolder}/UpdateCompileCommands.bat",
+            "problemMatcher": [],
+            "detail": "Regenerate .vscode/compile_commands.json"
+        }
+    ]
+}
