@@ -1,7 +1,7 @@
 # OmegaWare-Localization
 
 A small C++26 localization library for the [OmegaWare Framework](https://github.com/Omega172/OmegaWare-Framework)
-and [OmegaWare-GUI](https://github.com/Omega172/OmegaWare-GUI). Languages are compiled into the
+and [OmegaWare-GUI](https://github.com/OmegaWareProjects/OmegaWare-GUI). Languages are compiled into the
 binary as C++ headers, with optional `.lang` files on disk for translators. Fallback to a base
 language, plurals, `std::format` arguments, stable widget IDs across languages and automatic
 font glyph ranges so non-Latin scripts render without any manual font setup.
