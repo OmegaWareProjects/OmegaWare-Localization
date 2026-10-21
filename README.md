@@ -135,9 +135,9 @@ Test.bat
 
 | Script | Purpose |
 |---|---|
-| `Build.bat` / `.sh` | configure and build (`mode`, `arch`) |
-| `Test.bat` / `.sh` | build and run the tests (`mode`, `arch`) |
-| `UpdateCompileCommands.bat` / `.sh` | write `.vscode/compile_commands.json` |
+| `Build.bat` | configure and build (`mode`, `arch`) |
+| `Test.bat` | build and run the tests (`mode`, `arch`) |
+| `UpdateCompileCommands.bat` | write `.vscode/compile_commands.json` |
 
 To use it from another xmake project:
 
