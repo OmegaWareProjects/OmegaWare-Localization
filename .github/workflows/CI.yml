@@ -23,7 +23,7 @@ jobs:
           output_directory: Release
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Install XMake
       uses: xmake-io/github-action-setup-xmake@v1
       with:
@@ -39,7 +39,7 @@ jobs:
         & "Build/${{ matrix.output_directory }}/${{ matrix.architecture }}/OmegaLocalization-Tests.exe"
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     - name: Upload Library
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: OmegaLocalization-${{ matrix.build_configuration }}-${{ matrix.architecture }}
         path: Build/${{ matrix.output_directory }}/${{ matrix.architecture }}/OmegaLocalization.lib
